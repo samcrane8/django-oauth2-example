@@ -1,5 +1,5 @@
 # django-oauth2-example
-Setting up an example project for working on oauth2 with django.
+Setting up an example project for working on oauth2 with django. Plan to continue adapting as I learn more.
 
 This is for my own reference and anyone else interested!
 
