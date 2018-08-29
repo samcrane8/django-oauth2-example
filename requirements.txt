@@ -1,3 +1,5 @@
 django
 django-oauth-toolkit
 django-cors-middleware
+django-filter
+rest_condition

@@ -16,8 +16,21 @@ Including another URLconf
 from django.contrib import admin
 from django.conf.urls import url
 from django.urls import path, include
+from . import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('^o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
+    url(r'^o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
+    url(r'^musics/$', views.MusicList.as_view (), name = 'music-list'),
+    url (r'^music/(?P<pk>[0-9]+)/$', views.MusicDetail.as_view (), name =' music-detail'),
+
+    url (r'^ albums/$', views.AlbumList.as_view ()),
+    url (r'^album/(?P<pk>[0-9]+)/$', views.AlbumDetail.as_view ()),
+
+    url (r'^bands/$', views.BandList.as_view ()),
+    url (r'^band/(?P<pk>[0-9] +)/ $ ', views.BandDetail.as_view ()),
+
+    url (r'^members/$', views.MemberList.as_view ()),
+    url (r'^member/(?P<pk>[0-9]+)/$', views.MemberDetail.as_view ()),
 ]

@@ -38,10 +38,21 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'oauth2_provider',
-    'corsheaders',
+    'rest_framework',
+    'django_filters',
+    'oauth2_test'
 ]
 
-CORS_ORIGIN_ALLOW_ALL = True
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': ('oauth2_provider.contrib.rest_framework.OAuth2Authentication',)
+}
+
+
+OAUTH2_PROVIDER = {
+    # this is the list of available scopes
+    'SCOPES': {'read': 'Read scope', 'write': 'Write scope', 'groups': 'Access to your groups'},
+    'ACCESS_TOKEN_EXPIRE_SECONDS': 36000,
+}
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
